@@ -1,13 +1,14 @@
-name: CI
 on:
-   push: ~
+  push: ~
+  workflow_dispatch: ~
+
 jobs:
-    init:
-      name: "say hello"
-      runs on : "ubuntu-latest
-      steps:
-	-name: "First step"
-         run:
-             echo "Hello world"
-             echo "Second line"
- 
+  init:
+    name: "Say hello"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: "Listes files"
+        run: ls
